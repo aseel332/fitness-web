@@ -1,3 +1,5 @@
+import ImageCarousel from "./components/ImageCarousel";
+
 export default function App(){
   return(
     <>
@@ -10,11 +12,13 @@ export default function App(){
         </video>
       <header className="flex justify-between text-white items-center  p-2 md:p-4 lg:p-5">
         <h1 className="logo-text font-bold text-sm sm:text-3xl md:text-3xl lg:text-4xl">FITNESS18</h1>
-        <div className="button-text flex  items-center gap-2 text-xs sm:text-lg sm:gap-4 md:gap-6 md:text-xl font-semibold">
-          <h4>Services</h4>
-          <h4>About Us</h4>
-          <h4>Contact Us</h4>
-          <button className="bg-black shadow-custom py-2 px-2 md:py-3 md:px-5 rounded-full">Book A Tour</button>
+        <div className="flex items-center gap-2 text-xs sm:text-lg sm:gap-4 md:gap-6 md:text-xl font-semibold px-4">
+          <a href="#services" className="hover:underline">Services</a>
+          <a href="#about" className="hover:underline">About Us</a>
+          <a href="#contact" className="hover:underline">Contact Us</a>
+
+          <button className="opacity-0 bg-black shadow-custom py-2 px-2 md:py-3 md:px-5 rounded-full">Book A Tour</button>
+          <button className=" fixed top-4 right-4 md:top-6 md:right-6 z-50 bg-black shadow-custom py-2 px-2 md:py-3 md:px-5 rounded-full">Book A Tour</button>
         </div>
       </header>
       <section className="grid md:grid-cols-2 text-white mt-20 md:mt-30  p-2 md:p-4 lg:p-5">
@@ -33,18 +37,15 @@ export default function App(){
         <div className="h-[1px] w-full bg-neutral-300 rounded-full"></div>
         <div className="grid grid-cols-1 md:grid-cols-2 min-h-[810px] md:min-h-[550px] py-6 gap-6 md:gap-12">
           <div className="flex flex-col  h-full bg-neutral-900 rounded-xl">
-            <div className="h-[80%] md:h-[60%] w-full bg-neutral-300 rounded-t-xl">
+           <ImageCarousel type={"gym"}/>
 
-            </div>
             <div className="py-2 md:py-4 lg:py-5 px-4">
               <h1 className="heading-text text-3xl md:text-5xl">STRENGTH TRAINING</h1>
               <p className="paragraph-text text-xs md:text-base mt-0.5 md:mt-2">Step into the Strength Training Zone at FITNESS18 — a space designed for serious results and smart training. Equipped with state-of-the-art Nautilus machines, each station targets specific muscle groups to help you train with precision, safety, and control. Whether you're working on your legs, arms, back, or core, our ergonomic and </p>
             </div>
           </div>
            <div className="flex flex-col  h-full bg-neutral-900 rounded-xl">
-            <div className="h-[80%] md:h-[60%] w-full bg-neutral-300 rounded-t-xl">
-
-            </div>
+            <ImageCarousel type={"cardio"}/>
             <div className="py-2 md:py-4 lg:py-5 px-4">
               <h1 className="heading-text text-3xl md:text-5xl">CARDIO</h1>
               <p className="paragraph-text text-xs md:text-base mt-0.5 md:mt-2">Step into the Strength Training Zone at FITNESS18 — a space designed for serious results and smart training. Equipped with state-of-the-art Nautilus machines, each station targets specific muscle groups to help you train with precision, safety, and control. Whether you're working on your legs, arms, back, or core, our ergonomic and </p>
@@ -53,7 +54,7 @@ export default function App(){
         </div>
         <div className="h-[1px] w-full bg-neutral-300 rounded-full "></div>
       </section>
-      <section className="py-4 px-5 text-white" >
+      <section id="services" className="py-4 px-5 text-white" >
         <h1 className="heading-text text-3xl md:text-5xl">Services</h1>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-14 md:gap-x-12 min-h-[300px] md:min-h-[250px] mt-4 py-8 box">
           <div className="rounded-2xl border-2 border-solid bg-[#0E0E0E] border-[#49155A] shadow-custom-p">
@@ -97,13 +98,13 @@ export default function App(){
         </div>
         <div className="h-[1px] w-full bg-neutral-300 rounded-full "></div>
       </section>
-      <section className="py-4 px-5 text-white">
+      <section id="about" className="py-4 px-5 text-white">
         <h1 className="heading-text text-3xl md:text-5xl">About Us</h1>
         <div className="bg-neutral-300 w-full min-h-[200px] md:min-h-[400px] mt-4 rounded-2xl"></div>
         <p className="paragrapht-text text-sm md:text-base mt-4">At our gym, we’re more than just a fitness center — we’re a supportive community that uplifts, motivates, and grows together. Whether you're here to build strength, improve your health, or simply feel better every day, you’ll find a welcoming space filled with positive energy and like-minded individuals. </p>
         <div className="h-[1px] w-full bg-neutral-300 rounded-full mt-8"></div>
       </section>
-      <section className="py-4 px-5 text-white">
+      <section id="contact" className="py-4 px-5 text-white">
         <h1 className="heading-text text-3xl md:text-5xl ">Contact Us</h1>
         <div className="grid grid-cols-2 min-h-[200px] mt-4 md:mt-8 gap-4 md:gap-12">
           <div className="h-full py-2">
@@ -117,7 +118,7 @@ export default function App(){
             <h1 className="heading-text text-2xl md:text-4xl text-[#4F4F4F]">Contacts</h1>
             <p className="mt-4 flex gap-1 items-center text-xs md:text-base">
               <img className="max-w-[20px] md:max-w-[30px]" src="/phone.png"/>
-              0997877999</p>
+              07486848484</p>
             <p className="mt-4 flex gap-1 items-center">
               <img className="max-w-[20px] md:max-w-[30px]" src="/email.png"/>
               fitness18@gmail.com</p>
