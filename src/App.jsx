@@ -3,7 +3,7 @@ import ImageCarousel from "./components/ImageCarousel";
 export default function App(){
   return(
     <>
-      <div className="video-background-container h-[50vh] sm:h-[80vh] md:h-screen lg:h-screen ">
+      <div className="video-background-container h-[100vh] sm:h-[80vh] md:h-screen lg:h-screen ">
         <video  autoPlay muted loop playsInline className="video-bg">
    
         <source src="/GYM_Video.mp4" type="video/mp4" />
