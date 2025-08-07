@@ -10,24 +10,24 @@ export default function App(){
         Your browser does not support the video tag.
 
         </video>
-      <header className="flex justify-between text-white items-center  p-2 md:p-4 lg:p-5">
-        <h1 className="logo-text font-bold text-sm sm:text-3xl md:text-3xl lg:text-4xl">FITNESS18</h1>
-        <div className="flex items-center gap-2 text-xs sm:text-lg sm:gap-4 md:gap-6 md:text-xl font-semibold px-4">
+      <header className="flex flex-wrap justify-between text-white items-center  p-2 md:p-4 lg:p-5">
+        <h1 className="logo-text mt-2 font-bold text-2xl sm:text-3xl md:text-3xl lg:text-4xl">FITNESS18</h1>
+        <div className="flex items-center gap-4 text-base sm:text-lg sm:gap-4 md:gap-6 md:text-xl font-semibold md:px-4 w-fit">
           <a href="#services" className="hover:underline">Services</a>
           <a href="#about" className="hover:underline">About Us</a>
           <a href="#contact" className="hover:underline">Contact Us</a>
 
           <button className="opacity-0 bg-black shadow-custom py-2 px-2 md:py-3 md:px-5 rounded-full">Book A Tour</button>
-          <button className=" fixed top-4 right-4 md:top-6 md:right-6 z-50 bg-black shadow-custom py-2 px-2 md:py-3 md:px-5 rounded-full">Book A Tour</button>
+          <button className=" fixed top-4 right-2 md:top-6 md:right-6 z-50 bg-black shadow-custom py-2 px-4 md:py-3 md:px-5 rounded-full">Book A Tour</button>
         </div>
       </header>
-      <section className="grid md:grid-cols-2 text-white mt-20 md:mt-30  p-2 md:p-4 lg:p-5">
-        <div className="flex flex-col gap-0.2 md:gap-2 quote-text text-2xl md:text-3xl lg:text-4xl text-neutral-500 mb-8">
-          <p>- Build <span className="text-white text-3xl md:text-4xl lg:text-5xl font-bold">HEALTH.</span></p>
-          <p>- Sculpt <span className="text-white text-3xl md:text-4xl lg:text-5xl font-bold">PHYSIQUE.</span></p>
-          <p>- Live <span className="text-white text-3xl md:text-4xl lg:text-5xl font-bold">AESTHETIC.</span></p>
+      <section className="grid md:grid-cols-2 text-white mt-30 md:mt-30 gap-y-40 p-2 md:p-4 lg:p-5">
+        <div className="flex flex-col gap-0.2 md:gap-2 quote-text text-3xl md:text-3xl lg:text-4xl text-neutral-500 mb-8">
+          <p>- Build <span className="text-white text-4xl md:text-4xl lg:text-5xl font-bold">HEALTH.</span></p>
+          <p>- Sculpt <span className="text-white text-4xl md:text-4xl lg:text-5xl font-bold">PHYSIQUE.</span></p>
+          <p>- Live <span className="text-white text-4xl md:text-4xl lg:text-5xl font-bold">AESTHETIC.</span></p>
         </div>
-        <div className="flex flex-col justify-center gap-1">
+        <div className="flex flex-col justify-center gap-1 mt:20 md:mt-0">
           <p className="w-full text-xs md:text-sm mx-auto text-center button-text">Scroll For More</p>
           <div className="h-[120px] md:h-[150px] w-[3px] mx-auto bg-gradient-to-b from-white to-transparent rounded-full"></div>
         </div>
