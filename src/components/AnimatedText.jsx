@@ -15,7 +15,7 @@ export default function AnimatedText() {
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
-            delay: index * 0.4, // Stagger by 0.4s
+            delay: index * 0.4, 
             duration: 0.6,
             ease: "easeOut",
           }}

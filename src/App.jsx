@@ -3,11 +3,12 @@ import AnimatedText from "./components/AnimatedText";
 import ImageCarousel from "./components/ImageCarousel";
 import GymSections from "./components/GymSections";
 import AnimatedServiceCard from "./components/AnimatedServiceCard";
+import BookingModal from "./components/BookingModal";
 
 
 export default function App(){
   const [showScroll, setShowScroll] = useState(false);
-
+  const [showBooking, setShowBooking] = useState(false);
   useEffect(() => {
     const timeout =setTimeout(() =>{
       setShowScroll(true);
@@ -16,6 +17,7 @@ export default function App(){
   },)
   return(
     <>
+      {showBooking && <BookingModal isOpen={showBooking} onClose={() => {setShowBooking(false)}} />}
       <div className="video-background-container h-[100vh] sm:h-[80vh] md:h-screen lg:h-screen ">
         <video  autoPlay muted loop playsInline className="video-bg">
    
@@ -31,7 +33,9 @@ export default function App(){
           <a href="#contact" className="hover:underline">Contact Us</a>
 
           <button className="opacity-0 bg-black shadow-custom py-2 px-2 md:py-3 md:px-5 rounded-full">Book A Tour</button>
-          <button className=" fixed top-4 right-2 md:top-6 md:right-6 z-50 bg-black shadow-custom py-2 px-4 md:py-3 md:px-5 rounded-full">Book A Tour</button>
+          <button className=" fixed top-4 right-2 md:top-6 md:right-6 z-50 bg-black shadow-custom py-2 px-4 md:py-3 md:px-5 rounded-full" onClick={() => {
+            setShowBooking(true);
+          }}>Book A Tour</button>
         </div>
       </header>
       <section className="grid md:grid-cols-2 text-white mt-30 md:mt-30 gap-y-40 p-2 md:p-4 lg:p-5">
