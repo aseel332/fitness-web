@@ -61,21 +61,15 @@ function BookingForm({ onClose }) {
 
   const appendToGoogleSheet = async (formData) => {
   try {
-    const response = await fetch(import.meta.env.VITE_SHEETS_ENDPOINT, {
+    const response = await fetch(`${import.meta.env.VITE_SHEETS_ENDPOINT}`, {
       method: 'POST',
+      mode: "no-cors",
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(formData),
     });
 
-    const result = await response.json();
-
-    if (result.status === 'success') {
-      console.log('Data added to sheet');
-    } else {
-      console.error('Error adding data to sheet', result.message);
-    }
   } catch (error) {
     console.error('Failed to write to Google Sheet', error);
   }
