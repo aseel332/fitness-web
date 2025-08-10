@@ -26,6 +26,7 @@ function BookingForm({ onClose }) {
   const [time, setTime] = useState("");
   const [availableSlots, setAvailableSlots] = useState([]);
   const [bookedSlots, setBookedSlots] = useState([]);
+  const booking = JSON.parse(localStorage.getItem("booking"));
 
   useEffect(() => {
     if (!date) return;
@@ -93,6 +94,8 @@ function BookingForm({ onClose }) {
       return;
     }
 
+    
+
     await addDoc(collection(db, "bookings"), {
       name,
       phone,
@@ -102,6 +105,14 @@ function BookingForm({ onClose }) {
     });
 
     await appendToGoogleSheet({ name, phone, date, time });
+
+    localStorage.setItem("booking",  JSON.stringify({
+      name,
+      phone,
+      date,
+      time,
+      createdAt: serverTimestamp(),
+    }));
 
     alert("Tour booked successfully!");
     onClose();
@@ -113,9 +124,10 @@ function BookingForm({ onClose }) {
   const maxDate = max.toISOString().split("T")[0];
 
   return (
+    <>
     <div className="bg-black z-20 border border-white text-white rounded-xl p-6 w-[90%] max-w-md shadow-xl">
-      <h2 className="text-xl font-bold mb-4">Book A Tour</h2>
-      <input
+      <h2 className="text-xl font-bold mb-4">{booking ? "Slot Booked" : "Book A Tour"}</h2>
+      {booking ? <><p>Your Slot has been booked for Date: {booking.date} Time: {booking.time}</p></> : <><input
         type="text"
         placeholder="Your Name"
         className="w-full p-2 border rounded mb-3 bg-black text-white"
@@ -154,14 +166,15 @@ function BookingForm({ onClose }) {
         onClick={handleBooking}
       >
         Confirm Booking
-      </button>
+      </button> </>}
       <button
         className="text-sm mt-2 text-red-500 underline w-full"
         onClick={onClose}
       >
-        Cancel
+        {booking? "Ok" : "Cancel"}
       </button>
     </div>
+    </>
   );
 }
 

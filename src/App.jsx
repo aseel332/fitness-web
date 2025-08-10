@@ -9,12 +9,28 @@ import BookingModal from "./components/BookingModal";
 export default function App(){
   const [showScroll, setShowScroll] = useState(false);
   const [showBooking, setShowBooking] = useState(false);
+  const booking = JSON.parse(localStorage.getItem("booking"));
   useEffect(() => {
     const timeout =setTimeout(() =>{
       setShowScroll(true);
     }, 1200)
     return () => clearTimeout(timeout);
   },)
+
+  useEffect(() => {
+    function checkDateTime(dateStr, timeStr) {
+      const targetDateTime = new Date(`${dateStr}T${timeStr}:00`);
+      const now = new Date();
+      if (now > targetDateTime) {
+        localStorage.removeItem("booking");
+      }
+      return;
+    }
+    if(booking){
+      checkDateTime(booking.date, booking.time);
+      return;
+    }
+  })
   return(
     <>
       {showBooking && <BookingModal isOpen={showBooking} onClose={() => {setShowBooking(false)}} />}
@@ -35,7 +51,7 @@ export default function App(){
           <button className="opacity-0 bg-black shadow-custom py-2 px-2 md:py-3 md:px-5 rounded-full">Book A Tour</button>
           <button className=" fixed top-4 right-2 md:top-6 md:right-6 z-50 bg-black shadow-custom py-2 px-4 md:py-3 md:px-5 rounded-full" onClick={() => {
             setShowBooking(true);
-          }}>Book A Tour</button>
+          }}>{booking ? " Slot Booked" : "Book A Tour"}</button>
         </div>
       </header>
       <section className="grid md:grid-cols-2 text-white mt-30 md:mt-30 gap-y-40 p-2 md:p-4 lg:p-5">
