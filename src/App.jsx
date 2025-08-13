@@ -129,7 +129,7 @@ export default function App(){
       <section id="about" className="py-4 px-5 text-white">
         <h1 className="heading-text text-3xl md:text-5xl">About Us</h1>
         <div className="bg-neutral-300 w-full min-h-[200px] md:min-h-[400px] mt-4 rounded-2xl"></div>
-        <p className="paragrapht-text text-sm md:text-base mt-4">At our gym, we’re more than just a fitness center — we’re a supportive community that uplifts, motivates, and grows together. Whether you're here to build strength, improve your health, or simply feel better every day, you’ll find a welcoming space filled with positive energy and like-minded individuals. </p>
+        <p className="paragrapht-text text-sm md:text-base mt-4">At FITNESS18, we’re more than a gym — we’re a vibrant community that inspires, supports, and celebrates every milestone. Whether you’re building strength, boosting health, or simply moving toward a better you, you’ll find an uplifting space fueled by positive energy, expert guidance, and like-minded members on the same journey. </p>
         <div className="h-[1px] w-full bg-neutral-300 rounded-full mt-8"></div>
       </section>
       <section id="contact" className="py-4 px-5 text-white">

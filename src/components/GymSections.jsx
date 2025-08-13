@@ -34,7 +34,7 @@ function AnimatedCard({ type, title, description }) {
         }
 
       }}
-      className="flex flex-col h-full bg-neutral-900 rounded-xl"
+      className="flex flex-col md:max-h-[550px] bg-neutral-900 rounded-xl"
     >
       <ImageCarousel type={type} />
       <div className="py-2 md:py-4 lg:py-5 px-4">
@@ -52,14 +52,14 @@ export default function GymSections() {
       <AnimatedCard
         type="gym"
         title="STRENGTH TRAINING"
-        description="Step into the Strength Training Zone at FITNESS18 — a space designed for serious results and smart training. Equipped with state-of-the-art Nautilus machines, each station targets specific muscle groups to help you train with precision, safety, and control. Whether you're working on your legs, arms, back, or core, our ergonomic and"
+        description="Step into the Strength Training Zone at FITNESS18 — built for results and smart training. With state-of-the-art Nautilus machines targeting every muscle group, you’ll train with precision, safety, and control. From legs to core, our ergonomic equipment ensures proper form and maximum efficiency. Build strength, boost endurance, and unlock your potential in a space made for progress."
       />
       </div>
       <div className="py-2 md:py-4 lg:py-5 px-4">
       <AnimatedCard
         type="cardio"
         title="CARDIO"
-        description="Step into the Strength Training Zone at FITNESS18 — a space designed for serious results and smart training. Equipped with state-of-the-art Nautilus machines, each station targets specific muscle groups to help you train with precision, safety, and control. Whether you're working on your legs, arms, back, or core, our ergonomic and"
+        description="Step onto the Cardio Floor at FITNESS18 — your gateway to energy, endurance, and heart health. Featuring premium treadmills, bikes, rowers, and ellipticals, it’s built for all fitness levels. Burn calories, improve stamina, and track every move with precision. Stay motivated, challenge yourself, and power toward a stronger, healthier you."
       />
     </div>
     </>

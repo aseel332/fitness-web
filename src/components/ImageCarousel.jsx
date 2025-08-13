@@ -7,15 +7,24 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const images = [
-  "/gym_1.png",
-  "/gym_2.png",
-  "/gym_3.png",
+  "/weight1.jpg",
+  "/weight2.jpg",
+  "/weight3.jpg",
+  "/weight4.jpg",
+  "/weight5.jpg",
+  "/weight6.jpg",
+  "/weight8.jpg",
 ];
 
 const cardio =[
-  "/gym_1.png",
-  "/gym_2.png",
-  "/gym_3.png",
+  "/cardio1.jpg",
+  "/cardio2.jpg",
+  "/cardio3.jpg",
+  "/cardio4.jpg",
+  "/cardio5.jpg",
+  "/cardio6.jpg",
+  "/cardio7.jpg",
+
 ];
 
 export default function ImageCarousel({type}) {
@@ -41,7 +50,7 @@ export default function ImageCarousel({type}) {
             <img
               src={src}
               alt={`Slide ${index}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full md:max-h-[320px]  object-center object-cover my-auto"
             />
           </SwiperSlide>
         ))}
